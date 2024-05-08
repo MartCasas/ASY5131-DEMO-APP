@@ -16,9 +16,28 @@ exports.create = (req, res) => {
     published: req.body.published ? req.body.published : false
   });
 
+    const tutorial = new catalogo({
+    title: req.body.title,
+    description: req.body.description,
+    published: req.body.published ? req.body.published : false
+  });
+
   // Save Tutorial in the database
   tutorial
     .save(tutorial)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the Tutorial."
+      });
+    });
+};
+
+  catalogo
+    .save(catalogo)
     .then(data => {
       res.send(data);
     })
