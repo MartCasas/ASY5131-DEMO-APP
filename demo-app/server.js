@@ -39,28 +39,28 @@ app.get("/", (req, res) => {
 });
 
 // Catalogo 
-app.get("/", (req, res) => {
+app.get("/catalogo", (req, res) => {
   res.json({ message :
             "1-Taladro Baunker: $50.000"
             "2-Tornillo 8mm: $200"
             "3-Martillo: $2.000"
             "4-Destornillador Electrico: $40.000"});
 
-// Disponibilidad de Producto
-app.get("/", (req, res) => {
-  res.json({ message :
-            "-Taladro Baunker: Aun en Stock"
-            "-Tornillo 8mm: Pocos Productos"
-            "-Martillo: Aun en Stock"
-            "-Destornillador Electrico: Fuera de Stock"});
+//*Disponibilidad de Producto
+//app.get("/", (req, res) => {
+  //res.json({ message :
+    //        "-Taladro Baunker: Aun en Stock"
+      //      "-Tornillo 8mm: Pocos Productos"
+        //    "-Martillo: Aun en Stock"
+          //  "-Destornillador Electrico: Fuera de Stock"});
 
 //Bodeguero vista de stocks
-app.get("/", (req, res) => {
-  res.json({ message :
-            "-Taladro Baunker: En bodega se encuentra 60 productos "
-            "-Tornillo 8mm: En bodega quedan 10 cajas de este producto"
-            "-Martillo: En bodega aun existen 80 unidades"
-            "-Destornillador Electrico: 0 productos en bodega"});
+//app.get("/", (req, res) => {
+  //res.json({ message :
+     //       "-Taladro Baunker: En bodega se encuentra 60 productos "
+       //     "-Tornillo 8mm: En bodega quedan 10 cajas de este producto"
+         //   "-Martillo: En bodega aun existen 80 unidades"
+           // "-Destornillador Electrico: 0 productos en bodega"});
 });
 
 require("./app/routes/turorial.routes")(app);
